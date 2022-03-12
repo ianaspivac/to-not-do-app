@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spivac Iana FAF-192</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">To-NOT-do list</h1>
+        <div class="lists-container">
+            <div class="list-container to-not-do">
+                <h2 class="title" id="list-title">To not do</h2>
+                <div><button onclick="toggleList()" class="toggle-button">Toggle list</button></div>
+                <div>
+                    <form onsubmit="addToNotToDoList(event)" id="form">
+                        <input type="text" id="to-do-text" maxlength="100" placeholder="Add not to do..." />
+                        <input type="submit" value="Add" />
+                        <input type="file" id="image" name="image" accept="image/png, image/jpeg">
+                    </form>
+                    <ul class="list-items" id="list">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+<script src="app.js" defer></script>
+
+</html>

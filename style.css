@@ -1,0 +1,355 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+   reset css
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*  here begins the css styles */
+
+:root {
+    --primary-color: #241f1f;
+    --secondary-color: #292baf;
+    --third-color: #4CB2D4;
+    --pink: #ecb2ba;
+    --pink-dark: #c6939a;
+    --tape-gray: #dbd8be;
+    --tape-edge-gray: #b7b49d;
+    --transparent: rgba(255, 255, 255, 0);
+}
+
+body {
+    font-family: 'Caveat', cursive;
+    font-size: 24px;
+}
+
+.container {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
+    width: 100%;
+}
+
+.title {
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-size: 64px;
+    margin-bottom: 48px;
+    text-align: center;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 48px;
+    margin-bottom: 24px;
+}
+
+.lists-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-container {
+    width: 100%;
+}
+
+.list-items {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    margin-right: 20px;
+    justify-content: space-between;
+}
+
+.list-item {
+    position: relative;
+    color: #312647;
+    padding: 10px;
+    word-wrap: break-word;
+    width: 100%;
+    --paper-color: #d5e0f9;
+    --paper-dark: #c2d0ea;
+    --shadow-size: 3px;
+    --transparent: rgba(213, 224, 249, 0);
+    position: relative;
+    background: linear-gradient( to bottom right, var(--paper-dark), 20%, var(--transparent)), var(--paper-color);
+    min-width: 250px;
+    min-height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+    box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
+    margin-top: 50px;
+    width: 40%;
+}
+
+.hide {
+    display: none;
+}
+
+.list-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient( var(--transparent), 50%, var(--paper-dark), 51%, var(--transparent)), linear-gradient( to right, var(--transparent), 50%, var(--paper-dark), 51%, var(--transparent));
+}
+
+.top-tape {
+    position: absolute;
+    height: 4vmin;
+    top: -5px;
+    width: 110%;
+    background-color: var(--tape-gray);
+    border-right: 1px dotted var(--tape-edge-gray);
+    border-left: 1px dotted var(--tape-edge-gray);
+    opacity: 0.5;
+}
+
+.to-not-do .list-item {
+    --paper-color: #f9d5da;
+    --paper-dark: #eac2c2;
+    --shadow-size: 3px;
+    --transparent: rgba(213, 224, 249, 0);
+    position: relative;
+    background: linear-gradient( to bottom right, var(--paper-dark), 20%, var(--transparent)), var(--paper-color);
+}
+
+.delete {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    align-self: flex-end;
+}
+
+.delete button {
+    background: transparent;
+    border: none;
+    color: #ff0000;
+    font-family: 'Caveat', cursive;
+    font-size: 40px;
+    font-weight: 800;
+    padding: none;
+    cursor: pointer;
+}
+
+.list-item-text,
+.delete,
+.list-item-mark {
+    z-index: 1;
+}
+
+.list-item-mark {
+    visibility: hidden;
+    position: absolute;
+    top: 25px;
+}
+
+.list-item-text:hover~.list-item-mark {
+    visibility: visible;
+    color: red;
+}
+
+.list-item-text {
+    margin-top: 20px;
+}
+
+.list-item-text:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+}
+
+#to-do-text {
+    font-family: inherit;
+    font-size: 23px;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 85%
+}
+
+#form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#form input {
+    margin-bottom: 20px;
+}
+
+input[type=submit] {
+    color: #241f1f;
+    border: 2px solid #241f1f;
+    margin-left: 20px;
+    width: 10%;
+}
+
+input[type=submit],
+.toggle-button {
+    cursor: pointer;
+    background: none;
+    border-radius: 5px;
+}
+
+.toggle-button {
+    font-size: 18px;
+    height: 50px;
+    margin-bottom: 40px;
+    width: 120px;
+    border: 2px solid #292baf;
+    color: #292baf;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    object-fit: cover;
+    width: 70%;
+    margin-top: 20px;
+}
